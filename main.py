@@ -10,14 +10,14 @@ account_details = {
     'Initial deposit' : 300,
     'Account balance' : 300,
   },
-  'vic1':{
+  'vic2':{
      'Name': 'Vico',
      'Username' : 'redvjs',
      'Password' : 'NetherlandsW1llW1n',
      'Initial deposit' : 5,
      'Account balance' : 5,
   },
-  'wil1':{
+  'wil3':{
      'Name': 'Wilson',
      'Username' : 'wilsonistheman',
      'Password' : '1WilsonAndADream',
