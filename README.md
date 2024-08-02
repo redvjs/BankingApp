@@ -1,5 +1,11 @@
 The motivation for this project started from my The Skills Network Software Developer course, which started out as a small group project, but I have expanded and streamlined the functionalities and incorporated them into one functional program.
-This simulates a simple
+This simulates a simplified banking system using Python.
+
+Objectives:
+    Develop a simulated bank system that can handle multiple users.
+    Use data structures to manage user details and transactions.
+    Implement functions for each banking operation.
+    Employ loops and conditional statements to navigate through the user operations and validate inputs.
 
 
 Project Title:
@@ -17,15 +23,12 @@ Features:
     Transaction Logging: All transactions are logged and can be reviewed by the user.
 
 Prerequisites:
-
     Python 3.x
     Required libraries: openpyxl, termcolor, regular expression (RE), datetime
     You can install the required libraries using pip:
-
         pip install openpyxl termcolor
 
 Getting Started:
-
     Clone the repository or download the source code.
     Ensure you have the required libraries installed.
     Run the main script.
@@ -38,42 +41,31 @@ Project Structure:
 Usage:
     Main Menu:
     Upon running the application, you will be presented with the main menu:
-
         Welcome to Mega-Bank, how would you like to proceed?
-
         1. Open a new account
         2. Login in to an existing account
         3. Exit
-
     Account Creation:
         To create a new account, select option 1. You will be prompted to enter your name, a valid username, a secure password, and an initial deposit. Ensure your username and password meet the specified requirements:
-
         Username: 4-32 characters long, containing letters, digits, underscores, hyphens, or dots.
         Password: At least eight characters long, containing one uppercase letter, one lowercase letter, and one digit.
-
     Login:
         To log in, select option 2. Enter your unique ID, username, and password. Upon successful login, you will be directed to the main menu.
-
     Main Menu (Post-login):
         After logging in, the following options are available:
-
             Welcome [Username]
             1. View account summary
             2. Deposit
             3. Withdraw
             4. Logout and exit
-
         View Account Summary:
-        Select option 1 to view your account summary. You can also choose to view your transaction history.
-
-        Deposit
-        Select option 2 to deposit funds into your account. Enter the amount you wish to deposit, and your account balance will be updated accordingly.
-
-        Withdraw
-        Select option 3 to withdraw funds from your account. Ensure you do not withdraw more than your account balance.
-
-        Logout and Exit
-        Select option 4 to logout and exit the application.
+            Select option 1 to view your account summary. You can also choose to view your transaction history.
+        Deposit:
+            Select option 2 to deposit funds into your account. Enter the amount you wish to deposit, and your account balance will be updated accordingly.
+        Withdraw:
+            Select option 3 to withdraw funds from your account. Ensure you do not withdraw more than your account balance.
+        Logout and Exit:
+            Select option 4 to logout and exit the application.
 
 Helper Functions:
     valid_password(): Ensures password meets security requirements.
@@ -87,9 +79,7 @@ Logging Transactions:
     All transactions are logged using functions from the log_with_openpyxl module:
         logging_transaction(unique_id, type, amount): Logs the time of the transaction, user's unique ID, transaction type, and amount. Saves the details in an Excel spreadsheet.
         output_user_specific_transactions(unique_id): Outputs the transaction history for the specified user, formatting the output into a table with colored headers and transaction types.
-
     Example Logging Function:
-
         def logging_transaction(unique_id, type, amount):
             log_file_location = r"C:\path\to\transaction_log.xlsx"
             log_file = openpyxl.load_workbook(log_file_location)
@@ -100,10 +90,8 @@ Logging Transactions:
             current_sheet.cell(column=2, row=current_sheet.max_row, value=unique_id)
             current_sheet.cell(column=3, row=current_sheet.max_row, value=type)
             current_sheet.cell(column=4, row=current_sheet.max_row, value=amount).number_format = '£0.00'
-            log_file.save(log_file_location)
-
+            log_file.save(log_file_location)      
     Example Transaction History Function:
-
         def output_user_specific_transactions(unique_id):
             log_file_location = r"C:\path\to\transaction_log.xlsx"
             log_file = openpyxl.load_workbook(log_file_location)
