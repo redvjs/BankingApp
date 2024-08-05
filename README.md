@@ -33,6 +33,7 @@ Extensions and Future Improvements:
         -Password protection: Add password protection for user accounts to enhance security. Ensure passwords are hashed before storing them.
         - Admin Mode: Implement an admin mode to allow administrators to view and manage all user accounts, which can be useful for maintaining the system.
         - Interest Calculations and Transfers: Add features like interest calculations for savings and the ability to transfer money between accounts to make the system more comprehensive.
+        - Implement database to push and pull user details from
         
 
 Prerequisites:
